@@ -10,7 +10,6 @@ import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 import org.kodein.di.DI
 import org.kodein.di.bind
-import org.kodein.di.instance
 import org.kodein.di.singleton
 
 internal val ktorModule = DI.Module("ktorModule") {

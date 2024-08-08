@@ -41,7 +41,7 @@ kotlin {
             implementation("com.russhwolf:multiplatform-settings:1.0.0-RC")
             implementation( "com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC")
 
-//            api( "org.kodein.di:kodein-di:7.1.0")
+            api(libs.kodein.di)
         }
         androidMain {
             dependencies {
