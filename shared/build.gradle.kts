@@ -27,8 +27,34 @@ kotlin {
     
     sourceSets {
         commonMain.dependencies {
-            // put your Multiplatform dependencies here
+            api("org.jetbrains.kotlinx:kotlinx-serialization-core:1.3.0")
+
+            api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+            implementation("io.ktor:ktor-client-core:2.1.0")
+            implementation("io.ktor:ktor-client-json:2.1.0")
+            implementation("io.ktor:ktor-client-serialization:2.1.0")
+            implementation("io.ktor:ktor-client-content-negotiation:2.1.0")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:2.1.0")
+            implementation("io.ktor:ktor-client-logging:2.1.0")
+
+            implementation("com.russhwolf:multiplatform-settings:1.0.0-RC")
+            implementation( "com.russhwolf:multiplatform-settings-no-arg:1.0.0-RC")
+
+//            api( "org.kodein.di:kodein-di:7.1.0")
         }
+        androidMain {
+            dependencies {
+                implementation("io.ktor:ktor-client-android:2.1.0")
+            }
+        }
+
+        iosMain {
+            dependencies {
+                implementation("io.ktor:ktor-client-ios:2.1.0")
+            }
+        }
+
     }
 }
 
