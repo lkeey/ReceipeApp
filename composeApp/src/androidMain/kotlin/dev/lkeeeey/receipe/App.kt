@@ -1,5 +1,6 @@
 package dev.lkeeeey.receipe
 
+import android.app.Application
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -15,21 +16,14 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 
 import receipeapp.composeapp.generated.resources.Res
 
-@Composable
-@Preview
-fun App() {
-    MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text("Compose: $greeting")
-                }
-            }
-        }
+
+class PlApp : Application() {
+    override fun onCreate() {
+        super.onCreate()
     }
 }
+
+fun PlayzoneApp.initPlatformSDK() =
+    PlatformSDK.init(
+        configuration = PlatformConfiguration(androidContext = applicationContext)
+    )
